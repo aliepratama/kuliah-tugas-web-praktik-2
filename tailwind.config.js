@@ -4,11 +4,18 @@ module.exports = {
     "./src/**/*.{html,js}",
     "./public/**/*.{html,js}",
   ],
-  theme: {
-    extend: {},
-  },
   plugins: [
     require("rippleui"),
   ],
+  theme: {
+    extend: {
+      fontFamily: {
+        'sans': ['"Plus Jakarta Sans"'],
+      },
+      backgroundImage: {
+        'hero-pattern': "url('bg.jpg')",
+      }
+    }
+  },
 }
 
