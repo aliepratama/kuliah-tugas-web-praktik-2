@@ -2,13 +2,13 @@
 module.exports = {
   content: [
     "./src/**/*.{html,js}",
-    'node_modules/preline/dist/*.js',
+    "./public/**/*.{html,js}",
   ],
   theme: {
     extend: {},
   },
   plugins: [
-    require('preline/plugin'),
+    require("rippleui"),
   ],
 }
 
