@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask CRUD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-start">
+            <a class="navbar-item font-black">To-Do List</a>
+        </div>
+        <div class="navbar-end">
+            <a href="/" class="navbar-item">Home</a>
+            <a href="/list" class="navbar-item font-bold">Lihat List</a>
+        </div>
+    </div>
+    <form action="/edit/{{ id }}" method="POST" class="flex flex-col w-full overflow-x-auto px-5 h-[80vh] py-8 justify-evenly items-center">
+        <div class="flex flex-col items-center">
+            <h2 class="text-2xl font-black text-center">Edit Kegiatan</h2>
+            <span class="mt-4 text-center">Silahkan ubah kegiatan anda</span>
+        </div>
+        <div>
+            <input class="input-ghost-secondary input" placeholder="Nama Kegiatan" name="nama_kegiatan" value="{{ todo.0.2 }}" required/>
+            <select class="mt-4 select select-ghost-secondary" name="kategori">
+                {% if todo.0.3 == '0' %}
+                    <option selected>Penting</option>
+                    <option>Sedang</option>
+                    <option>Biasa</option>
+                {% elif todo.0.3 == '1' %}
+                    <option>Penting</option>
+                    <option selected>Sedang</option>
+                    <option>Biasa</option>
+                {% else %}
+                    <option>Penting</option>
+                    <option>Sedang</option>
+                    <option selected>Biasa</option>
+                {% endif %}
+            </select>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-secondary">Konfirmasi</button>
+            <a href="/list" class="btn btn-ghost ml-4">Batal</a>
+        </div>
+    </form>
+</body>
+</html>
