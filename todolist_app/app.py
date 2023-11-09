@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 
 
@@ -26,10 +26,17 @@ def list():
     return render_template('list.html', users=data)
 
 
-@app.route('/form/')
+@app.route('/form/', methods=['GET', 'POST'])
 def form():
+    if request.method == 'POST':
+        nama_kegiatan = request.form['nama_kegiatan']
+        kategori = request.form['kategori']
+        print(nama_kegiatan, kategori)
+        cur = mysql.connection.cursor()
+        cur.execute('INSERT INTO todo (nama_kegiatan, kategori) VALUES (%s, %s)', (nama_kegiatan, kategori))
+        mysql.connection.commit()
+        cur.close()
     return render_template('form.html')
-
 
 if __name__ == '__main__':
     app.run(debug=True)
