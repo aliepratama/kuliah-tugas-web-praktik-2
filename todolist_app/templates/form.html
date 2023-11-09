@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask CRUD</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
     <div class="navbar">
@@ -12,8 +12,8 @@
             <a class="navbar-item font-black">To-Do List</a>
         </div>
         <div class="navbar-end">
-            <a href="index.html" class="navbar-item">Home</a>
-            <a href="list.html" class="navbar-item font-bold">Lihat List</a>
+            <a href="/" class="navbar-item">Home</a>
+            <a href="/list" class="navbar-item font-bold">Lihat List</a>
         </div>
     </div>
     <div class="flex flex-col w-full overflow-x-auto px-5 h-[80vh] py-8 justify-evenly items-center">
@@ -31,7 +31,7 @@
         </div>
         <div>
             <button class="btn btn-secondary">Konfirmasi</button>
-            <a href="list.html" class="btn btn-ghost ml-4">Batal</a>
+            <a href="/list" class="btn btn-ghost ml-4">Batal</a>
         </div>
     </div>
 </body>
