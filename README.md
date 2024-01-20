@@ -11,6 +11,8 @@ Aplikasi todo list berbasis Flask. Menggunakan struktur MVC dengan database engi
 ## Demo
 
 Demo dapat dilihat disini:
+[2024-01-20-15-41-25.webm](https://github.com/aliepratama/kuliah-tugas-web-praktik-2/assets/102345023/3d2b4daa-c1b1-4a0d-b4ca-aee492d2b4b1)
+
 
 
 ## Installation
